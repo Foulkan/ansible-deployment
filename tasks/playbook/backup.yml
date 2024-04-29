@@ -1,0 +1,6 @@
+---
+- hosts: mariadb_servers
+  become: yes
+  tasks: 
+  - name: Backup MariaDB database
+    shell: "mysqldump --all-databases > /home/mariadb/backup.sql"

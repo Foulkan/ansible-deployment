@@ -1,0 +1,8 @@
+---
+- name: mariadb_to_rds
+  hosts: mariadb_servers
+  tasks:
+  - name: migration
+    ansible.builtin.import_role:
+      name: playbook
+    tags: role

@@ -1,0 +1,10 @@
+---
+- hosts: mariadb_servers
+  tasks:
+    - name: Dump MariaDB vers un fichier local
+      shell: "mysqldump -u root -p 'PWSDMariaDB' mydatabase > /tmp/db_backup.sql"
+
+    - name: Copie de la base de donnée vers le S3
+      shell: "aws s3 cp /tmp/db_backup.sql s3://mybucket/db_backup.sql"
+
+  

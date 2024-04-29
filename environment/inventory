@@ -1,0 +1,2 @@
+[mariadb_servers]
+10.0.2.15 vboxuser=debian ansible_ssh_private_key_file=/home/vboxuser/.ssh/id_rsa

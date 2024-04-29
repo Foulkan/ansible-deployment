@@ -1,0 +1,13 @@
+---
+ - hosts: localhost
+   tasks:
+     - name: Creation Instance RDS
+       amazon.aws.rds_instance:
+         db_instance_identifier: myrdsinstance
+         allocated_storage: 20
+         dbb_instance_class: db.t3.medium
+         engine: mariadb
+         engine_version: "10.4"
+         master_username: Hiltiman
+         master_user_password: 'HiltiPass01"
+         db_name: Hilti_rds

@@ -1,0 +1,7 @@
+---
+ - hotsts: localhost
+   tasks: 
+ - name: Transfert du S3 vers le RDS
+   shell: |
+     aws s3 cp s3://mybucket/db_backup.sql /tmp/db_backup.sql
+     mysql -h myrdsinstance.hilti.eu-weset-3.rds.amazonaws.com -u Hiltiman -p'Hiltipass01' database < /tmp/db_backup.sql

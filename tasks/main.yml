@@ -1,0 +1,27 @@
+---
+- name: backup mariadb
+  ansible.builtin.import_tasks:
+    file: playbook/backup.yml
+  tags: backup
+
+- name: Go to S3
+  ansible.builtin.import_tasks:
+    file: playbook/gos3.yml
+  tags: S3
+
+- name: create_RDS
+  ansible.builtin.import_tasks:
+    file: playbook/create_rds.yml
+  tags: RDS
+
+- name: road to rds
+  ansible.builtin.import_tasks:
+    file: playbook/road_to_rds.yml
+  tags: GO_to_RDS
+
+
+
+
+
+
+# tasks file for ansible-deployment
